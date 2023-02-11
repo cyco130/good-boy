@@ -1,15 +1,16 @@
 {
-  "name": "mr-data",
-  "version": "0.0.0",
+  "name": "good-boy",
+  "version": "0.0.1",
   "type": "module",
   "files": [
     "dist",
     "*.d.ts"
   ],
   "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+    "browser": "./dist/browser.js",
+    "default": {
+      "import": "./dist/server.js",
+      "require": "./dist/server.cjs"
     }
   },
   "typesVersions": {
@@ -24,32 +25,30 @@
     "dev": "tsup --watch",
     "prepack": "rm -rf dist && pnpm build",
     "test": "pnpm test:typecheck && pnpm test:lint && pnpm test:unit && pnpm test:package",
-    "test:unit": "vitest run",
+    "test:unit": "vitest run --passWithNoTests",
     "test:typecheck": "tsc -p tsconfig.json --noEmit",
     "test:lint": "eslint src --max-warnings 0 --ignore-pattern dist",
     "test:package": "publint"
   },
   "description": "Small React data fetching library",
   "license": "MIT",
-  "repository": "https://github.com/cyco130/mr-data",
+  "repository": "https://github.com/cyco130/good-boy",
   "keywords": [
     "react",
     "react hooks",
     "data fetching"
   ],
+  "peerDependencies": {
+    "react": "18"
+  },
   "devDependencies": {
-    "@cyco130/eslint-config": "^2.1.2",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@types/node": "^18.11.9",
-    "@types/react": "^18.0.25",
-    "eslint": "^8.28.0",
-    "happy-dom": "^7.7.0",
-    "publint": "^0.1.3",
+    "@cyco130/eslint-config": "^2.1.3",
+    "@types/react": "^18.0.27",
+    "eslint": "^8.34.0",
+    "publint": "^0.1.9",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tsup": "^6.5.0",
-    "typescript": "^4.9.3",
-    "vitest": "^0.25.3"
+    "tsup": "^6.6.0",
+    "typescript": "^4.9.5",
+    "vitest": "^0.28.4"
   }
 }

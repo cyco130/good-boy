@@ -1,5 +1,20 @@
 {
-  "name": "mr-data-example-basic",
+  "name": "@good-boy/example-basic",
   "type": "module",
-  "private": true
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "good-boy": "workspace:*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.9.5",
+    "vite": "^4.1.1"
+  }
 }

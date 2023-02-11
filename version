@@ -1,5 +1,5 @@
 #!/bin/bash
-PROJECT_NAME=mr-data
+PROJECT_NAME=good-boy
 
 WHITE='\033[1;37m'
 GREEN='\033[0;32m'
